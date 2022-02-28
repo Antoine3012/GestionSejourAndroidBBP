@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <TextView
+        android:id="@+id/txtsejour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Séjours des Patients"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="43dp" />
+
+    <TextView
+        android:id="@+id/txtconnsejour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connecté en AAAAAA"
+        tools:layout_editor_absoluteX="579dp"
+        tools:layout_editor_absoluteY="43dp" />
+
+    <TextView
+        android:id="@+id/txtchoix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patient :"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <Spinner
+        android:id="@+id/spinnerpatient"
+        android:layout_width="592dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="94dp" />
+
+    <TextView
+        android:id="@+id/txtdatearrivee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date d'arrivée :"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="234dp" />
+
+    <TextView
+        android:id="@+id/txtlit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lit :"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <TextView
+        android:id="@+id/txtidsejour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID Séjour :"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="150dp" />
+
+    <TextView
+        android:id="@+id/txtnom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom :"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="178dp" />
+
+    <TextView
+        android:id="@+id/txtdaten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date Naissance :"
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <TextView
+        android:id="@+id/idsejour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="id"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/nompatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nom"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="178dp" />
+
+    <TextView
+        android:id="@+id/prenompatient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prenom"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="205dp" />
+
+    <TextView
+        android:id="@+id/datearrivee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="date"
+        tools:layout_editor_absoluteX="173dp"
+        tools:layout_editor_absoluteY="234dp" />
+
+    <TextView
+        android:id="@+id/idsejour5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lit 0 Chambre 0 service cardiologie"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="265dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
