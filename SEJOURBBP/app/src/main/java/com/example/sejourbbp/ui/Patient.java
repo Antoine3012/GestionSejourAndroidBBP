@@ -15,6 +15,20 @@ public class Patient {
             datenaissance=pDateNaissance;
         }
 
-
+    public int getId() {
+        return id;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public Date getDatenaissance() {
+        return datenaissance;
+    }
+}
 
