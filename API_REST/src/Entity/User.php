@@ -4,17 +4,11 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-use ApiPlatform\Core\Annotation\ApiResource;
-
 /**
- * @ApiResource()
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ORM\Table(name="`user`")
- * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -40,12 +34,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Service::class)
-     */
-    private $numService;
-
 
     public function getId(): ?int
     {
@@ -92,18 +80,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
-
-        return $this;
-    }
-
-    public function getNumService(): ?Service
-    {
-        return $this->numService;
-    }
-
-    public function setNumService(?Service $numService): self
-    {
-        $this->numService = $numService;
 
         return $this;
     }
