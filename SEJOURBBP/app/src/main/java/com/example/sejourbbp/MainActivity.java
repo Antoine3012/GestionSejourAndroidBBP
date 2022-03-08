@@ -26,6 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     private TextView listpatient;
+    private TextView erreur;
 
     private ActivityMainBinding binding;
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("192.168.1.24/")
+                .baseUrl("https://192.168.1.24:8000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -77,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Patient>> call, Throwable t) {
-                listpatient.setText(t.getMessage());
+                erreur = findViewById(R.id.textView);
+                erreur.setText(t.getMessage());
             }
         });
     }
