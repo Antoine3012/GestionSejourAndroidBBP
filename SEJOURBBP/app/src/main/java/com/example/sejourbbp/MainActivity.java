@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://192.168.1.24:8000/")
+                .baseUrl("http://192.168.1.24:8000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Patient>> call, Response<List<Patient>> response) {
                 if(!response.isSuccessful()){
-                    listpatient.setText("Code: "+response.code());
+//                    listpatient.setText("Code: "+response.code());
                     return;
                 }
 
