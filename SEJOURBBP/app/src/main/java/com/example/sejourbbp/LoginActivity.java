@@ -17,42 +17,42 @@ import retrofit2.http.POST;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login2);
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_login2);
+//
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("192.168.1.24/")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//
+//        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
+//        EditText InUsername = findViewById(R.id.InUsername);
+//        EditText InPassword = findViewById(R.id.InPassword);
+//        TextView output = findViewById(R.id.outputlogin);
+//
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("192.168.1.24/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
-        EditText InUsername = findViewById(R.id.InUsername);
-        EditText InPassword = findViewById(R.id.InPassword);
-        TextView output = findViewById(R.id.outputlogin);
-
-
-        Button btnConnexion = findViewById(R.id.btnConnexion);
-        btnConnexion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String username = InUsername.getText().toString();
-                String password = InPassword.getText().toString();
-
-                Call<String> call = jsonPlaceHolderApi.getToken(username, password);
-
-                call.enqueue(
-                @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
-                        if(!response.isSuccessful()){
-                            listpatient.setText("Code: "+response.code());
-                            return;
-                        }
-                    }
-
-                );
-            }
-        });
-    }
+//        Button btnConnexion = findViewById(R.id.btnConnexion);
+//        btnConnexion.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String username = InUsername.getText().toString();
+//                String password = InPassword.getText().toString();
+//
+//                Call<String> call = jsonPlaceHolderApi.getToken(username, password);
+//
+//                call.enqueue(
+//                @Override
+//                    public void onResponse(Call<String> call, Response<String> response) {
+//                        if(!response.isSuccessful()){
+//                            listpatient.setText("Code: "+response.code());
+//                            return;
+//                        }
+//                    }
+//
+//                );
+//            }
+//        });
+//    }
 }

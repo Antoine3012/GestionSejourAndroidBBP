@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PPE_Symfony/ici/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/Sio2021/AndroidStudioProjects/SEJOURBBP/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3671875" />
         <entry key="..\:/Users/Sio2021/AndroidStudioProjects/SEJOURBBP/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Sio2021/AndroidStudioProjects/SEJOURBBP/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
@@ -15,11 +16,11 @@
         <entry key="..\:/Users/Sio2021/Documents/GitHub/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/fragment_dashboard.xml" value="0.25679347826086957" />
         <entry key="..\:/Users/Sio2021/Documents/GitHub/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/fragment_home.xml" value="0.25679347826086957" />
         <entry key="..\:/Users/Sio2021/Documents/GitHub/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/fragment_notifications.xml" value="0.25679347826086957" />
-        <entry key="..\:/Users/sio2021/Desktop/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_login2.xml" value="0.33" />
+        <entry key="..\:/Users/sio2021/Desktop/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_login2.xml" value="0.20018115942028986" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
