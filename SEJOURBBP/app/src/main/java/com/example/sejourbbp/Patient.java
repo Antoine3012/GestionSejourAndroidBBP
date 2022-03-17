@@ -30,5 +30,6 @@ public class Patient {
     public Date getDatenaissance() {
         return datenaissance;
     }
+
 }
 

@@ -2,6 +2,8 @@ package com.example.sejourbbp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -15,6 +17,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.sejourbbp.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -24,8 +28,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView listpatient;
     private TextView erreur;
+
+
+    private ListView listpatients;
 
     private ActivityMainBinding binding;
     private String token;
@@ -35,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent intent = this.getIntent();
         token = intent.getStringExtra("token");
+        setContentView(R.layout.fragment_home);
+        // Get ListView object from xml
+        this.listpatients = (ListView) findViewById(R.id.listpatient);
+        // Initializing a new String Array
+        Patient[] patienttab = new Patient[] {};
+        final List<Patient> patientList = new ArrayList<Patient>(Arrays.asList(patienttab));
+        final ArrayAdapter<Patient> PatientAdapter= new ArrayAdapter<Patient>(this, android.R.layout.simple_list_item_1, patientList);
+
+        // Bind des items pour l'adapter
+        listpatients.setAdapter(PatientAdapter);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -61,19 +77,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Patient>> call, Response<List<Patient>> response) {
                 if(!response.isSuccessful()){
-//                    listpatient.setText("Code: "+response.code());
+                    erreur = findViewById(R.id.textView);
+//                    A voir pourquoi ce n'est pas successful
+                      erreur.setText("Code: "+ response.code());
+////                    this.listView
                     return;
                 }
 
                 List<Patient> patients = response.body();
                 for (Patient patient : patients){
-                    String content ="";
-                    content+="ID: "+ patient.getId()+ "\n";
-                    content+="Nom: "+ patient.getNom()+ "\n";
-                    content+="Prenom: "+ patient.getPrenom()+ "\n";
-                    content+="Date de naissance: "+ patient.getDatenaissance()+ "\n\n";
+//                    String content ="";
+//                    content+="ID: "+ patient.getId()+ "\n";
+//                    content+="Nom: "+ patient.getNom()+ "\n";
+//                    content+="Prenom: "+ patient.getPrenom()+ "\n";
+//                    content+="Date de naissance: "+ patient.getDatenaissance()+ "\n\n";
 
-                    listpatient.append(content);
+                    patientList.add(patient);
                 }
             }
 
