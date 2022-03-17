@@ -2,22 +2,23 @@ package com.example.sejourbbp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.sejourbbp.ui.Patient;
 
-import java.io.IOException;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.POST;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -44,20 +45,56 @@ public class LoginActivity extends AppCompatActivity {
                 String username = InUsername.getText().toString();
                 String password = InPassword.getText().toString();
 
-                Call<String> call = jsonPlaceHolderApi.getToken(username, password);
+//                JSONObject obj = new JSONObject();
+//                try {
+//                    obj.put("username", username);
+//                    obj.put("password", password);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
 
-                call.enqueue(new Callback<String>() {
+
+                Call<Object> call = jsonPlaceHolderApi.getToken("application/json", new Login(username, password));
+
+
+
+                call.enqueue(new Callback<Object>() {
                     @Override
-                    public void onResponse(Call<String> call, Response<String> response) {
+                    public void onResponse(Call<Object> call, Response<Object> response) {
+                        JSONObject token = new JSONObject();
+                        output.setText(response.body().toString());
 
-                        output.setText(response.toString());
+                        try {
+                             token = new JSONObject( response.body().toString());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        try {
+                            output.setText(token.getString("token"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
+                        try {
+                            intent.putExtra("token", token.getString("token"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        startActivity(intent);
+
                     }
 
                     @Override
-                    public void onFailure(Call<String> call, Throwable t) {
-                        output.setText("erreur");
+                    public void onFailure(Call<Object> call, Throwable t) {
+                        output.setText(t.toString());
                     }
                 });
+
+
             }
         });
 

@@ -1,10 +1,9 @@
 package com.example.sejourbbp;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.example.sejourbbp.ui.Patient;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -29,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView erreur;
 
     private ActivityMainBinding binding;
+    private String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Intent intent = this.getIntent();
+        token = intent.getStringExtra("token");
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         JsonPlaceHolderApi jsonPlaceHolderApi = retrofit.create(JsonPlaceHolderApi.class);
 
-        Call<List<Patient>> call = jsonPlaceHolderApi.getPatients();
+        Call<List<Patient>> call = jsonPlaceHolderApi.getPatients("application/json", this.token);
 
         call.enqueue(new Callback<List<Patient>>() {
             @Override

@@ -1,4 +1,4 @@
-package com.example.sejourbbp.ui;
+package com.example.sejourbbp;
 
 import java.util.Date;
 
