@@ -10,12 +10,12 @@
         android:id="@+id/InUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TxtTitle" />
 
@@ -27,7 +27,7 @@
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
+        app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InUsername" />
 
@@ -35,36 +35,33 @@
         android:id="@+id/TxtTitle"
         android:layout_width="238dp"
         android:layout_height="56dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="48dp"
         android:accessibilityLiveRegion="none"
         android:clickable="false"
         android:text="Se Connecter"
-        android:textSize="40px"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnConnexion"
-        android:layout_width="134dp"
-        android:layout_height="47dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.939"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/InPassword"
-        app:layout_constraintVertical_bias="0.261" />
 
     <TextView
         android:id="@+id/outputlogin"
         android:layout_width="268dp"
         android:layout_height="163dp"
-        android:layout_marginBottom="44dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConnexion" />
+
+    <Button
+        android:id="@+id/btnConnexion"
+        android:layout_width="126dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:text="Se Connecter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
