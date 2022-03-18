@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView erreur;
 
 
-    private ListView listpatients;
+    private List<Patient> listpatients = new ArrayList<>();
+    private ArrayAdapter<Patient> listViewAdapter;
 
     private ActivityMainBinding binding;
     private String token;
@@ -43,16 +44,7 @@ public class MainActivity extends AppCompatActivity {
         token = intent.getStringExtra("token");
         setContentView(R.layout.fragment_home);
         // Get ListView object from xml
-        this.listpatients = (ListView) findViewById(R.id.listpatient);
         // Initializing a new String Array
-        Patient[] patienttab = new Patient[] {};
-        final List<Patient> patientList = new ArrayList<Patient>(Arrays.asList(patienttab));
-        final ArrayAdapter<Patient> PatientAdapter= new ArrayAdapter<Patient>(this, android.R.layout.simple_list_item_1, patientList);
-
-        // Bind des items pour l'adapter
-        listpatients.setAdapter(PatientAdapter);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -85,15 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 List<Patient> patients = response.body();
-                for (Patient patient : patients){
-//                    String content ="";
-//                    content+="ID: "+ patient.getId()+ "\n";
-//                    content+="Nom: "+ patient.getNom()+ "\n";
-//                    content+="Prenom: "+ patient.getPrenom()+ "\n";
-//                    content+="Date de naissance: "+ patient.getDatenaissance()+ "\n\n";
 
-                    patientList.add(patient);
-                }
             }
 
             @Override
