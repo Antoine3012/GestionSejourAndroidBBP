@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = this.getIntent();
-        token = intent.getStringExtra("token");
+//        token = intent.getStringExtra("token");
+        token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDgwMjg5MzQsImV4cCI6MTY0ODAzMjUzNCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidGVzdCJ9.qZabjUr5xNLE3BFO2IDjkeGi8tT5B0cdDyGTfTVs2VQZgkcbVpV41fNvz-IAAwHrxdCMxyUxpuraFha5CrTusYxjEo_Bzi-VHU98fbBGiTs4ofE0SWHyRSNa7kWjYRDHqeXwGjAhnqXX6JrzcpN4xZ5woIitP0vpEPiNSOBTaQiqNiekLbDT21Aa0t3uFQZe-O2ELeQzRQhlRc1AuF-JRLibqc2urye-Y_A5Xf1lLZgEzAitqr04BqqVm6bjjGjUZRtlU-kfN3BOY2pXdrP1vcbVQtCIpPR038SUFexrGWwg3UU2_RMBeEmBYcSE7a8ZcUdzXlpm-b1KVtLqNVKJWA";
+
         setContentView(R.layout.fragment_home);
         // Get ListView object from xml
         // Initializing a new String Array
@@ -74,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
                       erreur.setText("Code: "+ response.code());
 ////                    this.listView
                     return;
+                }else{
+                    List<Patient> patients = response.body();
                 }
-
-                List<Patient> patients = response.body();
 
             }
 
