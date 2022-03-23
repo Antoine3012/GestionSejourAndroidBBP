@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/GestionSejourAndroidBBP.iml" filepath="$PROJECT_DIR$/.idea/GestionSejourAndroidBBP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SEJOURBBP.iml" filepath="$PROJECT_DIR$/.idea/modules/SEJOURBBP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SEJOURBBP.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SEJOURBBP.app.iml" />
     </modules>
   </component>
 </project>
