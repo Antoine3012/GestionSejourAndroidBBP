@@ -27,6 +27,9 @@ import com.example.myapplication.ui.login.LoginViewModel;
 import com.example.myapplication.ui.login.LoginViewModelFactory;
 import com.example.myapplication.databinding.ActivityLoginBinding;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
@@ -35,6 +38,10 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.1.24:8000/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
