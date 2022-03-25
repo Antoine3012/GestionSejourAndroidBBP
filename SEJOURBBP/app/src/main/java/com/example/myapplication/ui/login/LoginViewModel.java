@@ -1,15 +1,29 @@
 package com.example.myapplication.ui.login;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import android.content.Intent;
 import android.util.Patterns;
 
+import com.example.myapplication.ApiAsker;
 import com.example.myapplication.data.LoginRepository;
 import com.example.myapplication.data.Result;
 import com.example.myapplication.data.model.LoggedInUser;
 import com.example.myapplication.R;
+import com.example.myapplication.data.model.User;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginViewModel extends ViewModel {
 
@@ -30,8 +44,11 @@ public class LoginViewModel extends ViewModel {
     }
 
     public void login(String username, String password) {
+
         // can be launched in a separate asynchronous job
         Result<LoggedInUser> result = loginRepository.login(username, password);
+
+
 
         if (result instanceof Result.Success) {
             LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
