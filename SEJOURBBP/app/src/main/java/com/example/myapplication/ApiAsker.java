@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import com.example.myapplication.data.model.User;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -16,6 +18,6 @@ public interface ApiAsker {
 
 
     @POST("api/login_check")
-    Call<Object> getToken(@Header("Accept") String header,@Body Login login);
+    Call<Object> getToken(@Header("Accept") String header,@Body User user);
 
 }

@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/PPE_Symfony/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_sejour.xml" value="0.27717391304347827" />
+        <entry key="..\:/Users/sio2021/Desktop/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.22556894243641232" />
+        <entry key="..\:/Users/sio2021/Desktop/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout-w936dp/activity_login.xml" value="0.23599726775956284" />
+        <entry key="..\:/Users/sio2021/Desktop/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_login.xml" value="0.3129528985507246" />
       </map>
     </option>
   </component>
