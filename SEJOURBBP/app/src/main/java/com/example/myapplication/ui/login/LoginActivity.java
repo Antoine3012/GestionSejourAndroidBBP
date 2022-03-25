@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.ApiAsker;
 import com.example.myapplication.R;
+import com.example.myapplication.SejourActivity;
 import com.example.myapplication.data.model.User;
 import com.example.myapplication.ui.login.LoginViewModel;
 import com.example.myapplication.ui.login.LoginViewModelFactory;
@@ -138,13 +140,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
+
                 Call<Object> call = apiAsker.getToken("application/json", new User(usernameEditText.getText().toString(), passwordEditText.getText().toString()));
 
                 call.enqueue(new Callback<Object>() {
                     @Override
                     public void onResponse(Call<Object> call, Response<Object> response) {
                         JSONObject token = new JSONObject();
-//                output.setText(response.body().toString());
+                        Log.e("output", response.body().toString());
 
                         try {
                             token = new JSONObject( response.body().toString());
@@ -152,7 +155,7 @@ public class LoginActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
 
-                        Intent intent = new Intent(LoginActivity.class, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, SejourActivity.class);
 
                         try {
                             intent.putExtra("token", token.getString("token"));
@@ -166,7 +169,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Object> call, Throwable t) {
-                        output.setValue(new LoginResult(R.string.login_failed));
+                        Log.e("erreur login", t.toString());
                     }
                 });
             }
