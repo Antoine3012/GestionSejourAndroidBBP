@@ -83,5 +83,15 @@ public class SejourActivity extends AppCompatActivity {
                 startActivity(intent5);
             }
         });
+
+        //Bouton Archives
+        Button btnArchiveSejour = findViewById(R.id.btnArchiveSejour);
+        Intent intent6 = new Intent(SejourActivity.this, ListeSejourActivity.class);
+        btnArchiveSejour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent6);
+            }
+        });
     }
 }
