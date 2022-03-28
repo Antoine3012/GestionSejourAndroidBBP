@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnEnCours" />
 
     <Button
-        android:id="@+id/btnDebutentCeJour"
+        android:id="@+id/btnDebutantCeJour"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -68,7 +68,7 @@
         android:text="Date précise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDebutentCeJour" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDebutantCeJour" />
 
     <Button
         android:id="@+id/btnSejourPatient"

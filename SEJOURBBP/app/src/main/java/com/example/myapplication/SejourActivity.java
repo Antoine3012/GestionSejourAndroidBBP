@@ -19,7 +19,7 @@ public class SejourActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         TextView txtLogin = findViewById(R.id.btnLogin);
         String login = this.getIntent().getStringExtra("login");
-        txtLogin.setText(login);
+//        txtLogin.setText(login);
         token = this.getIntent().getStringExtra("token");
         setContentView(R.layout.activity_sejour);
 
@@ -27,9 +27,6 @@ public class SejourActivity extends AppCompatActivity {
 
         Button btnDeco = findViewById(R.id.btnDeconnexion);
         Intent intentLogin = new Intent(SejourActivity.this, LoginActivity.class);
-
-
-
         btnDeco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,8 +34,54 @@ public class SejourActivity extends AppCompatActivity {
             }
         });
 
+        //Bouton En cours
+        Button btnEnCours = findViewById(R.id.btnEnCours);
+        Intent intent = new Intent(SejourActivity.this, ListeSejourActivity.class);
+        btnEnCours.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent);
+            }
+        });
 
+        //Bouton A Venir
+        Button btnAVenir = findViewById(R.id.btnAVenir);
+        Intent intent2 = new Intent(SejourActivity.this, ListeSejourActivity.class);
+        btnAVenir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent2);
+            }
+        });
 
+        //Bouton DebutantCeJour
+        Button btnDebutantCeJour = findViewById(R.id.btnDebutantCeJour);
+        Intent intent3 = new Intent(SejourActivity.this, ListeSejourActivity.class);
+        btnDebutantCeJour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent3);
+            }
+        });
 
+        //Bouton DatePrecise
+        Button btnDatePrecise = findViewById(R.id.btnDatePrecise);
+        Intent intent4 = new Intent(SejourActivity.this, SejourDateActivity.class);
+        btnDatePrecise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent4);
+            }
+        });
+
+        //Bouton Patients
+        Button btnSejourPatient = findViewById(R.id.btnSejourPatient);
+        Intent intent5 = new Intent(SejourActivity.this, SejourPatientActivity.class);
+        btnSejourPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent5);
+            }
+        });
     }
 }
