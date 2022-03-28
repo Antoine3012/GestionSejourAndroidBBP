@@ -11,8 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
-        android:usesCleartextTraffic="true"
-        >
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".trouversejourActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListeSejourActivity"
+            android:exported="false" />
         <activity
             android:name=".SejourActivity"
             android:exported="false" />
