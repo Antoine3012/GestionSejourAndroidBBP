@@ -17,11 +17,11 @@ public class SejourActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        token = this.getIntent().getStringExtra("token");
+        setContentView(R.layout.activity_sejour);
         TextView txtLogin = findViewById(R.id.btnLogin);
         String login = this.getIntent().getStringExtra("login");
         txtLogin.setText(login);
-        token = this.getIntent().getStringExtra("token");
-        setContentView(R.layout.activity_sejour);
 
 
 
@@ -36,6 +36,7 @@ public class SejourActivity extends AppCompatActivity {
                 startActivity(intentLogin);
             }
         });
+        
 
 
 
