@@ -57,7 +57,6 @@ public class LoginActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        TextView output = findViewById(R.id.output);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -66,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText usernameEditText = binding.username;
         final EditText passwordEditText = binding.password;
-        final Button loginButton = binding.login;
+        final Button loginButton = binding.btnLogin;
         final ProgressBar loadingProgressBar = binding.loading;
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
@@ -151,19 +150,16 @@ public class LoginActivity extends AppCompatActivity {
 
                         try {
                             token = new JSONObject( response.body().toString());
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                        Intent intent = new Intent(LoginActivity.this, SejourActivity.class);
-
-                        try {
+                            Log.e("check", token.getString("token"));
+                            Intent intent = new Intent(LoginActivity.this, SejourActivity.class);
                             intent.putExtra("token", token.getString("token"));
+                            intent.putExtra("login", usernameEditText.getText().toString());
+                            startActivity(intent);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
-                        startActivity(intent);
+
 
                     }
 

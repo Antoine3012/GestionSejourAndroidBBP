@@ -120,18 +120,6 @@ class Sejour
         return $this;
     }
 
-    public function getValidationSortie(): ?bool
-    {
-        return $this->validationSortie;
-    }
-
-    public function setValidationSortie(bool $validationSortie): self
-    {
-        $this->validationSortie = $validationSortie;
-
-        return $this;
-    }
-
     public function getValidationEntree(): ?bool
     {
         return $this->validationEntree;
