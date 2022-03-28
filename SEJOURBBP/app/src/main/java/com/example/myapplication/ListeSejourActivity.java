@@ -2,12 +2,19 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
+
+import com.example.myapplication.ui.login.LoginActivity;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -39,7 +46,6 @@ public class ListeSejourActivity extends AppCompatActivity {
         ListView lstSejour = findViewById(R.id.lstviewSejour);
 
         Call<List<Sejour>> call = apiAsker.getSejours("application/json", token);
-
         call.enqueue(new Callback<List<Sejour>>() {
             @Override
             public void onResponse(Call<List<Sejour>> call, Response<List<Sejour>> response) {
@@ -60,7 +66,13 @@ public class ListeSejourActivity extends AppCompatActivity {
 
 
 
-
-
+        //Bouton Retour
+        Button btnRetour = findViewById(R.id.btnRetour);
+        btnRetour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 }
