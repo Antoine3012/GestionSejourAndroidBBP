@@ -13,7 +13,10 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".trouversejourActivity"
+            android:name=".SejourDateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SejourPatientActivity"
             android:exported="false" />
         <activity
             android:name=".ListeSejourActivity"

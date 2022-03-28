@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/PPE_Symfony/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_liste_sejour.xml" value="0.25" />
         <entry key="..\:/PPE_Symfony/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_sejour.xml" value="0.27717391304347827" />
+        <entry key="..\:/PPE_Symfony/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_sejour_date.xml" value="0.27717391304347827" />
+        <entry key="..\:/PPE_Symfony/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_sejour_patient.xml" value="0.27717391304347827" />
+        <entry key="..\:/PPE_Symfony/GestionSejourAndroidBBP/SEJOURBBP/app/src/main/res/layout/activity_trouversejour.xml" value="0.27717391304347827" />
       </map>
     </option>
   </component>
