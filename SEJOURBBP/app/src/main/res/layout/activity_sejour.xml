@@ -101,4 +101,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSejourPatient" />
 
+    <Button
+        android:id="@+id/btnlstpatient"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Liste des Patients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnArchiveSejour" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

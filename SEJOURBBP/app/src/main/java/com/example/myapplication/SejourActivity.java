@@ -97,5 +97,15 @@ public class SejourActivity extends AppCompatActivity {
                 startActivity(intent6);
             }
         });
+
+        //Bouton Liste Patient
+        Button btnListePatient = findViewById(R.id.btnlstpatient);
+        Intent intent7 = new Intent(SejourActivity.this, PatientActivity.class);
+        btnListePatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intent7);
+            }
+        });
     }
 }
