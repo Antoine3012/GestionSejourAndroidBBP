@@ -105,6 +105,7 @@ public class SejourActivity extends AppCompatActivity {
         btnListePatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                intent7.putExtra("token", token);
                 startActivity(intent7);
             }
         });
