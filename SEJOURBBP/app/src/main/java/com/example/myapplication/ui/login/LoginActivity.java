@@ -146,11 +146,9 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Object> call, Response<Object> response) {
                         JSONObject token = new JSONObject();
-                        Log.e("output", response.body().toString());
 
                         try {
                             token = new JSONObject( response.body().toString());
-                            Log.e("check", token.getString("token"));
                             Intent intent = new Intent(LoginActivity.this, SejourActivity.class);
                             intent.putExtra("token", token.getString("token"));
                             intent.putExtra("login", usernameEditText.getText().toString());
