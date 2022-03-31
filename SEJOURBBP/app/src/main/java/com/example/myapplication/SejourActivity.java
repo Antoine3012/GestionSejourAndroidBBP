@@ -39,10 +39,10 @@ public class SejourActivity extends AppCompatActivity {
 
         //Bouton En cours
         Button btnEnCours = findViewById(R.id.btnEnCours);
-        Intent intent = new Intent(SejourActivity.this, ListeSejourActivity.class);
         btnEnCours.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(SejourActivity.this, ListeSejourActivity.class);
                 intent.putExtra("token", token);
                 intent.putExtra("login", login);
                 startActivity(intent);

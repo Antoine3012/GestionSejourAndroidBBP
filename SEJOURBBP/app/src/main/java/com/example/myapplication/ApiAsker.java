@@ -21,7 +21,7 @@ public interface ApiAsker {
     Call<Object> getToken(@Header("Accept") String header,@Body User user);
 
     @GET("api/sejours")
-    Call<List<Sejour>> getSejours(@Header("accept") String header, @Header("Authorization") String token);
+    Call<List<Sejour>> getSejours(@Header("Accept") String header, @Header("Authorization") String token);
 
 }
 
