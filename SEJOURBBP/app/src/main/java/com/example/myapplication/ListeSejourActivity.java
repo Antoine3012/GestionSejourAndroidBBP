@@ -34,14 +34,14 @@ public class ListeSejourActivity extends AppCompatActivity {
     private List<Sejour> sejourList = new ArrayList<>();
     private ArrayAdapter<Sejour> listViewAdapter;
 
-    private String token;
+    private String token= "Bearer ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_sejour);
 
-        token = this.getIntent().getStringExtra("token");
+        token += this.getIntent().getStringExtra("token");
 
         ListView lstSejour = findViewById(R.id.lstviewSejour);
 
@@ -49,12 +49,20 @@ public class ListeSejourActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Sejour>>() {
             @Override
             public void onResponse(Call<List<Sejour>> call, Response<List<Sejour>> response) {
+
+                if(!response.isSuccessful()){
+                    Log.e("token", token);
+//                    A voir pourquoi ce n'est pas successful
+                    Log.e("Code ", String.valueOf(response.code()));
+                    Log.e("message", response.message());
+                    return;
+                }else {
                 sejourList = response.body();
-                Log.e("check", sejourList.toString());
 
                 listViewAdapter = new ArrayAdapter<Sejour>(ListeSejourActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, sejourList);
 
                 lstSejour.setAdapter(listViewAdapter);
+                }
             }
 
             @Override
