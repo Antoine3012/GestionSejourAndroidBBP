@@ -10,9 +10,8 @@
         android:id="@+id/txtPatient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="Liste des Patients:"
-        app:layout_constraintBottom_toTopOf="@+id/_dynamic"
+        app:layout_constraintBottom_toTopOf="@+id/lstPatient"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
