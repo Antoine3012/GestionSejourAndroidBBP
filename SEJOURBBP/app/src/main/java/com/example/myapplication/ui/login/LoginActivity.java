@@ -150,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             token = new JSONObject( response.body().toString());
                             Intent intent = new Intent(LoginActivity.this, SejourActivity.class);
-                            intent.putExtra("token", token.getString("token"));
+                            intent.putExtra("token", "bearer "+token.getString("token"));
                             intent.putExtra("login", usernameEditText.getText().toString());
                             startActivity(intent);
                         } catch (JSONException e) {
@@ -163,7 +163,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Object> call, Throwable t) {
-                        Log.e("erreur login", t.toString());
                     }
                 });
             }

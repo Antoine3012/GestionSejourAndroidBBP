@@ -57,6 +57,12 @@ public class Sejour {
         this.validationEntree = validationEntree;
     }
 
+    public String getTitle(){
+        String title = this.lePatient.getNom()  + ", chambre n°" + laChambre.getId();
+
+        return title;
+    }
+
     @Override
     public String toString() {
         return "Sejour{" +

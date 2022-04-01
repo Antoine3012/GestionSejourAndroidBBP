@@ -36,4 +36,10 @@ public class Patient {
                 ", nom='" + nom + '\'' + ", prenom='" + prenom + '\'' + ", Date de naissance='" + datenaissance + '\'' +
                 '}';
     }
+
+    public String getTitle(){
+        String title = nom + " " + prenom;
+
+        return title;
+    }
 }

@@ -28,9 +28,9 @@ public class PatientActivity extends AppCompatActivity {
             .build();
 
     private final ApiAsker apiAsker = retrofit.create(ApiAsker.class);
-    private String token="Bearer ";
+    private String token;
     private List<Patient> patientList = new ArrayList<>();
-    private ArrayAdapter<Patient> listViewAdapter;
+    private PatientAdapter listViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class PatientActivity extends AppCompatActivity {
                 patientList = response.body();
                 Log.e("check", patientList.toString());
 
-                listViewAdapter = new ArrayAdapter<Patient>(PatientActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, patientList);
+                listViewAdapter = new PatientAdapter(PatientActivity.this, R.layout.activity_item, patientList);
 
                 lstPatients.setAdapter(listViewAdapter);
             }
@@ -72,12 +72,10 @@ public class PatientActivity extends AppCompatActivity {
         // BOUTON RETOUR
         //Bouton Liste Patient
         Button btnRetourPatient = findViewById(R.id.btnretourp);
-        Intent intent1 = new Intent(PatientActivity.this, SejourActivity.class);
         btnRetourPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent1.putExtra("token", token);
-                startActivity(intent1);
+                onBackPressed();
             }
         });
     }

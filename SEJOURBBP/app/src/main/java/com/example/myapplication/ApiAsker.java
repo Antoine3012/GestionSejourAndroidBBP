@@ -16,9 +16,9 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface ApiAsker {
-    
+
     @GET("api/patients")
-    Call<List<Patient>> getPatients(@Header("Accept") String header, @Header("Authorization") String token);
+    Call<List<Patient>> getPatients( String header, @Header("Authorization") String token);
 
     @POST("api/patients")
     Call<List<Patient>> postPatients(@Header("Accept") String header, @Header("Authorization") String token ,@Body Patient patient);

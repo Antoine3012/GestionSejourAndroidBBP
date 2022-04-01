@@ -39,7 +39,7 @@ public class ListeSejourActivity extends AppCompatActivity {
     private List<Sejour> sejourList = new ArrayList<>();
     private ArrayAdapter<Sejour> listViewAdapter;
 
-    private String token= "Bearer ";
+    private String token;
     private String context;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -83,6 +83,7 @@ public class ListeSejourActivity extends AppCompatActivity {
                 }
 
                 listViewAdapter = new ArrayAdapter<Sejour>(ListeSejourActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, lesSejourEnCours);
+
 
                 lstSejour.setAdapter(listViewAdapter);
 
