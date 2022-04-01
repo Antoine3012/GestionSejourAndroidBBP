@@ -27,7 +27,13 @@ public class Patient {
         return prenom;
     }
 
-    public Date getDatenaissance() {
-        return datenaissance;
+    public Date getDatenaissance() { return datenaissance; }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' + ", prenom='" + prenom + '\'' + ", Date de naissance='" + datenaissance + '\'' +
+                '}';
     }
 }

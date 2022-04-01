@@ -28,7 +28,7 @@ public class PatientActivity extends AppCompatActivity {
             .build();
 
     private final ApiAsker apiAsker = retrofit.create(ApiAsker.class);
-    private String token;
+    private String token="Bearer ";
     private List<Patient> patientList = new ArrayList<>();
     private ArrayAdapter<Patient> listViewAdapter;
 
@@ -36,7 +36,7 @@ public class PatientActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient);
-
+        token += this.getIntent().getStringExtra("token");
         // LISTE DES PATIENTS
         ListView lstPatients = findViewById(R.id.lstPatient);
         Call<List<Patient>> call = apiAsker.getPatients("application/json", token);
@@ -66,6 +66,18 @@ public class PatientActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(intentLogin);
+            }
+        });
+
+        // BOUTON RETOUR
+        //Bouton Liste Patient
+        Button btnRetourPatient = findViewById(R.id.btnretourp);
+        Intent intent1 = new Intent(PatientActivity.this, SejourActivity.class);
+        btnRetourPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent1.putExtra("token", token);
+                startActivity(intent1);
             }
         });
     }
