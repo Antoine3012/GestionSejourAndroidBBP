@@ -1,8 +1,9 @@
 package com.example.myapplication;
 
 import java.util.Date;
+import java.io.Serializable;
 
-public class Patient {
+public class Patient implements Serializable{
     private int id;
     private String nom;
     private String prenom;

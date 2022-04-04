@@ -27,7 +27,7 @@ public interface ApiAsker {
     Call<List<Patient>> putPatients(@Path ("id")int id, @Header("Accept") String header, @Header("Authorization") String token , @Body Patient patient);
 
     @DELETE("api/patients/{id}")
-    Call<List<Patient>> delPatients(@Path ("id")int id, @Header("Accept") String header, @Header("Authorization") String token , @Body Patient patient);
+    Call<List<Patient>> delPatients(@Path ("id")int id, @Header("Accept") String header, @Header("Authorization") String token);
 
     @POST("api/login_check")
     Call<Object> getToken(@Header("Accept") String header,@Body User user);

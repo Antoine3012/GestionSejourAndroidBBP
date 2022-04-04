@@ -65,6 +65,10 @@ public class ListeSejourActivity extends AppCompatActivity {
 
                 //En cours
                 if(!response.isSuccessful()){
+<<<<<<< Updated upstream
+=======
+                    Log.e("token", token);
+>>>>>>> Stashed changes
                     Log.e("Code ", String.valueOf(response.code()));
                     Log.e("message", response.message());
                     return;
